@@ -41,4 +41,28 @@
           文件名
           边界框数量
           x1，y1，w，h，模糊，表情，光照，无效，遮挡，姿势
-          
+      2.2 CelebA: 
+         CelebFaces属性数据集（CelebA）是一个大型人脸属性数据集，拥有超过200K名人图像，每个图像都有40个属性注释。
+         此数据集中的图像覆盖了大的姿势变化和背景杂乱。 CelebA具有大量的多样性，大量的数量和丰富的注释，包括
+          10,177个人信息，
+          202,599个脸图像，和 5关键点位置信息（眼睛，鼻子和嘴角）。
+          可用作以计算机视觉任务的训练和测试集：面部属性识别，面部关键点检测。
+## 3.网络模型训练
+###
+     1.下载Wider Face 数据集。
+     2.运行prepare_data / gen_12net_data.py为PNet生成训练数据（人脸检测部分）。
+     3.运行gen_landmark_aug_12.py为PNet生成训练数据（面部标记检测部分）。
+     4.运行gen_imglist_pnet.py以合并两部分训练数据。
+     5.运行gen_PNet_tfrecords.py为PNet生成tfrecord。
+     6.训练PNet后，运行gen_hard_example为RNet生成训练数据（人脸检测部分）。
+     7.运行gen_landmark_aug_24.py为RNet生成训练数据（面部标志检测部分）。
+     8.运行gen_imglist_rnet.py以合并训练数据的两部分。
+     9.运行gen_RNet_tfrecords.py为RNet生成tfrecords。（你应该运行这个脚本四次，分别生成neg，pos，part和landmark的tfrecords）
+     10.训练RNet后，运行gen_hard_example以生成ONet的训练数据（人脸检测部分）。
+     11.运行gen_landmark_aug_48.py为ONet生成训练数据（面部标记检测部分）。
+     12.运行gen_imglist_onet.py以合并训练数据的两部分。
+     13.运行gen_ONet_tfrecords.py为ONet生成tfrecords。（你应该运行这个脚本四次，分别生成neg，pos，part和landmark的tfrecords）
+     一些细节
+ ## 4.文件详解
+ ## 5.细节
+ ## 6.结果
