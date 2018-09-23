@@ -4,9 +4,9 @@
      项目重现MTCNN算法，使用多任务级联神经网络同时实现人脸检测和校正。
 ## 2.环境和数据需求
 ###
-.    1.在win7系统环境下tensorflow GPU版本，使用anaconda配置tensorflow-gpu的环境，此外还需要配置CUDA和cudnn加速驱动用来训练模型。
-.    2.需要下载WIDER Face 和 CelebA这两个数据集，其中WIDER Face用来实现人脸检测，CelebAs数据集用来预测人脸关键点预测。
-     2.1 WIDER Face：
+    1.在win7系统环境下tensorflow GPU版本，使用anaconda配置tensorflow-gpu的环境，此外还需要配置CUDA和cudnn加速驱动用来训练模型。
+    2.需要下载WIDER Face 和 CelebA这两个数据集，其中WIDER Face用来实现人脸检测，CelebAs数据集用来预测人脸关键点预测。
+    2.1 WIDER Face：
          数据集包括不同场景中包含有不同带数目人脸的图片，每张照片都有对应的标注文件，对应图片中人脸数目，人脸图框位姿，还有其他参数。
          属性描述如下：
           附加属性名称和标签值之间的映射。
